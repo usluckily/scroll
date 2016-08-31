@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script type="text/javascript" src="../jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="scroll.js"></script>
+    <script>
+        $(function(){
+            var Scroll = new scroll();
+            Scroll.init({
+                node:'#scroll'
+            });
+            Scroll.start();
+
+            var Scroll2 = new scroll();
+            Scroll2.init({
+                node:'#scroll2',
+                speed:'500',
+                time:'2000'
+            });
+            Scroll2.start();
+
+            $('#start').click(function(){
+                Scroll2.start();
+            });
+            $('#stop').click(function(){
+                Scroll2.stop();
+            })
+        })
+    </script>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        ul,li{list-style:none;}
+        .scroll{width:602px;height:100px;border:1px solid #ccc;overflow:hidden;position:relative;}
+        .scroll2{width:202px;height:100px;border:1px solid #ccc;overflow:hidden;position:relative;}
+        #scroll{width:auto;height:100%;position:relative;left:0;}
+        #scroll2{width:auto;height:100%;position:relative;left:0;}
+        #scroll>li,#scroll2>li{width:200px;height:100%;text-align: center;line-height:100px;float:left;}
+        .scr_nav{width:auto;margin:0 auto;position:relative;top:-20px;}
+        .scr_nav:after{display: block;content:'';width:100%;clear:both;}
+        .scr_nav>li{height:8px;border-radius: 50%;background:#fff;float:left;border:1px solid #e2e2e2;cursor:pointer;}
+        .scr_nav>.on{background:#000;border:1px solid #000;}
+    </style>
+</head>
+<body>
+<div class="scroll">
+    <ul id="scroll">
+        <li>1</li>
+        <li>2</li>
+        <li>1</li>
+        <li>2</li>
+        <li>1</li>
+        <li>2</li>
+        <li>2</li>
+        <li>2</li>
+        <li>1</li>
+        <li>2</li>
+        <li>1</li>
+        <li>2</li>
+        <li>2</li>
+    </ul>
+</div>
+<!---->
+<div class="scroll2">
+    <ul id="scroll2">
+        <li>1</li>
+        <li>2</li>
+    </ul>
+</div>
+</body>
+</html>
